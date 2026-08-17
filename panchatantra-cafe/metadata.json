@@ -1,0 +1,6 @@
+{
+  "name": "Panchatantra Cafe",
+  "description": "High-end editorial website for Panchatantra Cafe & Creative Hangout, Begumpet, Hyderabad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

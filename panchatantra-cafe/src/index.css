@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #171717;
+    --text-cream: #F2EBD7;
+    --accent-yellow: #F5D900;
+    --accent-lavender: #C4B5FD;
+  }
+
+  body {
+    background-color: #171717;
+    color: #F2EBD7;
+    font-family: 'DM Mono', 'Space Mono', monospace;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Typography Helpers */
+.font-pixel {
+  font-family: 'Pixelify Sans', 'Silkscreen', cursive, monospace;
+}
+
+.font-silkscreen {
+  font-family: 'Silkscreen', monospace;
+}
+
+.font-vt323 {
+  font-family: 'VT323', monospace;
+}
+
+.font-mono-code {
+  font-family: 'DM Mono', monospace;
+}
+
+.font-space {
+  font-family: 'Space Mono', monospace;
+}
+
+.font-hand {
+  font-family: 'Caveat', cursive;
+}
+
+.font-marker {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.font-patrick {
+  font-family: 'Patrick Hand', cursive;
+}
+
+.font-devanagari {
+  font-family: 'Rozha One', serif;
+}
+
+/* Subtle Film Grain / Noise Effect */
+.bg-grain {
+  background-image: radial-gradient(rgba(242, 235, 215, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(245, 217, 0, 0.12) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.bg-chalkboard {
+  background-color: #1a1a1a;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 32px;
+}
+
+/* Sticker & Washi Tape Details */
+.washi-tape {
+  position: absolute;
+  height: 18px;
+  background: rgba(242, 235, 215, 0.75);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transform: rotate(-3deg);
+  z-index: 10;
+}
+
+.washi-tape-yellow {
+  position: absolute;
+  height: 16px;
+  background: rgba(245, 217, 0, 0.85);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.sticker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.9);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sticker-pill:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+}
+
+.rough-border {
+  border: 1.5px dashed rgba(242, 235, 215, 0.35);
+}
+
+.rough-border-yellow {
+  border: 1.5px dashed #F5D900;
+}
+
+/* Hand-drawn underline animation */
+.hand-drawn-line {
+  position: relative;
+}
+
+.hand-drawn-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  background: currentColor;
+  opacity: 0.6;
+  transform: rotate(-0.5deg);
+  border-radius: 2px;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+  border: 2px solid #171717;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F5D900;
+}
